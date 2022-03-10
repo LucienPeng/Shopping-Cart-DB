@@ -1,6 +1,4 @@
-//const data = require("./models/data.js");
-//const Message = require("./models/schema.js");
-// const ItemModel = require("./models/testSchema.js");
+const Item = require("./modules/collection.js");
 
 const express = require("express");
 const app = express();
@@ -12,67 +10,52 @@ app.use(bodyParser.json());
 
 const username = encodeURIComponent("lucien");
 const password = encodeURIComponent("/nxfl7zp");
-const database = encodeURIComponent("items");
-const uri = `mongodb+srv://${username}:${password}@bulletin-board.4mgev.mongodb.net/${database}?retryWrites=true&w=majority`;
-heroku config:set MONGODB_URI="mongodb+srv://lucien:/nxfl7zp@repository.mg5t5.mongodb.net/items?retryWrites=true&w=majority"
+const collection = encodeURIComponent("items");
+const uri = `mongodb+srv://${username}:${password}@repository.mg5t5.mongodb.net/${collection}?retryWrites=true&w=majority`;
 
+mongoose
+  .connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Connected to MongoDB.");
+  })
+  .catch((e) => {
+    console.log("Failed to connect to MongoDB");
+    console.log(e);
+  });
 
+// CORS config here
+app.all("/*", function (req, res, next) {
+  // CORS headers
+  res.header("Access-Control-Allow-Origin", "*"); // restrict it to the required domain
+  res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
+  // Set custom headers for CORS
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Content-type,Accept,X-Access-Token,X-Key"
+  );
+  if (req.method == "OPTIONS") {
+    res.status(200).end();
+  } else {
+    next();
+  }
+});
 
-// mongoose
-//   .connect(uri, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//   })
-//   .then(() => {
-//     console.log("Connected to MongoDB.");
-//   })
-//   .catch((e) => {
-//     console.log("Failed to connect to MongoDB");
-//     console.log(e);
-//   });
+app.get("/", (req, res) => {
+  res.send("購物車ＤＢ已經成功連線！！！");
+});
 
-// // CORS config here
-// app.all("/*", function (req, res, next) {
-//   // CORS headers
-//   res.header("Access-Control-Allow-Origin", "*"); // restrict it to the required domain
-//   res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
-//   // Set custom headers for CORS
-//   res.header(
-//     "Access-Control-Allow-Headers",
-//     "Content-type,Accept,X-Access-Token,X-Key"
-//   );
-//   if (req.method == "OPTIONS") {
-//     res.status(200).end();
-//   } else {
-//     next();
-//   }
-// });
-
-// app.get("/", (req, res) => {
-//   res.send("留言板ＤＢ已經成功連線！！！");
-// });
-
-// //Find All Data
-// app.get("/all", async (req, res) => {
-//   try {
-//     let data = await Message.find(
-//       {},
-//       {
-//         id: 1,
-//         user: 1,
-//         timeStamp: 1,
-//         topic: 1,
-//         content: 1,
-//         like: 1,
-//         valid: 1,
-//         _id: 0,
-//       }
-//     );
-//     await res.send(data);
-//   } catch (e) {
-//     console.log(e);
-//   }
-// });
+//Find All Data
+app.get("/items", async (req, res) => {
+  try {
+    let data = await Item.find({});
+    await res.send(data);
+  } catch (e) {
+    console.log(e);
+  }
+});
 
 // //Find Topic
 // app.get("/topic/:topic", async (req, res) => {
@@ -120,19 +103,6 @@ heroku config:set MONGODB_URI="mongodb+srv://lucien:/nxfl7zp@repository.mg5t5.mo
 //   }
 // });
 
-// //Delete User
-// app.post("/deleteUser/:user", async (req, res) => {
-//   let { user } = req.params;
-//   try {
-//     Message.deleteMany({ user: user }, function (err) {
-//       if (err) return handleError(err);
-//       res.send("Data has been removed !");
-//     });
-//   } catch (e) {
-//     console.log(e);
-//   }
-// });
-
 // //Delete Topic
 // app.post("/deleteTopic/:topic", async (req, res) => {
 //   let { topic } = req.params;
@@ -146,29 +116,26 @@ heroku config:set MONGODB_URI="mongodb+srv://lucien:/nxfl7zp@repository.mg5t5.mo
 //   }
 // });
 
-// app.post("/add", async (req, res) => {
-//   let { id, user, timeStamp, topic, content, like, valid } = req.body;
-//   let newMessage = new Message({
-//     id,
-//     user,
-//     timeStamp,
-//     topic,
-//     content,
-//     like,
-//     valid,
-//   });
-//   await newMessage
-//     .save()
-//     .then(() => {
-//       res.send(`Your message has been saved`);
-//       console.log(`Message has been saved`);
-//     })
-//     .catch((e) => {
-//       console.log(`Message is not accepted.`);
-//       console.log(e);
-//       res.send(e);
-//     });
-// });
+app.post("/addItem", async (req, res) => {
+  let { item, price, stock, description } = req.body;
+  let newItem = new Item({
+    item,
+    price,
+    stock,
+    description,
+  });
+  await newItem
+    .save()
+    .then(() => {
+      res.send(`Your item has been saved`);
+      console.log(`item has been saved`);
+    })
+    .catch((e) => {
+      console.log(`item is not accepted.`);
+      console.log(e);
+      res.send(e);
+    });
+});
 
 // app.post("/like/:id", async (req, res) => {
 //   let { id } = req.params;
