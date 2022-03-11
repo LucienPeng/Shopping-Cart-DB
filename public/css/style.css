@@ -1,0 +1,79 @@
+body {
+  font-size: 16px;
+}
+body h1 {
+  font-family: Righteous, cursive;
+  color: #224229;
+}
+
+.container-fluid.banner {
+  background-color: #f8f1e2;
+}
+.container-fluid.banner .row {
+  min-height: 50vh;
+}
+.container-fluid.banner .row .col.text {
+  text-align: center;
+  min-height: inherit;
+}
+.container-fluid.banner .row .col.text h2 {
+  font-family: Architects Daughter, cursive;
+  color: #224229;
+  padding: 10px;
+  font-size: 3rem;
+}
+.container-fluid.banner .row .col.text p {
+  margin-bottom: 3rem;
+  color: #224229;
+}
+.container-fluid.banner .row .col.text a {
+  display: inline-block;
+  background-color: #749b7c;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+
+.container.items h2 {
+  font-family: Architects Daughter, cursive;
+  color: #224229;
+  padding: 10px;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+.container.items .card {
+  border: none;
+  margin: 0 auto;
+}
+.container.items .card .btn {
+  background-color: #749b7c;
+  color: #fff;
+}
+.container.items .card .btn:hover {
+  background-color: #224229;
+}
+.container.items .card:hover {
+  opacity: 0.7;
+}
+.container.items .orders {
+  color: #749b7c;
+}
+
+footer {
+  background-color: #224229;
+  margin-top: 5rem;
+  font-size: 3rem;
+  text-align: center;
+  color: #fff;
+}
+footer ul {
+  height: 30vh;
+  list-style-type: none;
+}
+footer ul li {
+  margin: 1rem;
+}
+
+/*# sourceMappingURL=style.css.map */

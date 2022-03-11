@@ -1,0 +1,63 @@
+$primary-color: #224229;
+$primary-font: Righteous, cursive;
+$secondary-color: #749b7c;
+$secondary-font: Architects Daughter, cursive;
+$chinese-font: Noto Serif TC, serif;
+
+body {
+  font-size: 16px;
+
+  h1 {
+    font-family: $primary-font;
+    color: $primary-color;
+  }
+}
+
+.container.cart {
+  h2 {
+    font-family: $secondary-font;
+    color: $primary-color;
+    padding: 10px;
+    font-size: 2rem;
+  }
+  h6 {
+    font-size: 1.5rem;
+    font-family: $primary-font;
+    color: $secondary-color;
+    span {
+      font-family: $chinese-font;
+    }
+  }
+  p {
+    font-size: 1rem;
+    font-family: $chinese-font;
+    color: #353535;
+  }
+  .btn.submitBtn {
+    background-color: $secondary-color;
+    color: #fff;
+    display: block;
+    width: 5rem;
+  }
+  .orders {
+    img {
+      max-height: 25vh;
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+footer {
+  background-color: $primary-color;
+  margin-top: 5rem;
+  font-size: 3rem;
+  text-align: center;
+  color: #fff;
+  ul {
+    height: 30vh;
+    list-style-type: none;
+    li {
+      margin: 1rem;
+    }
+  }
+}

@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.static("public"));
 
 const username = encodeURIComponent("lucien");
 const password = encodeURIComponent("/nxfl7zp");
@@ -44,7 +45,7 @@ app.all("/*", function (req, res, next) {
 });
 
 app.get("/", (req, res) => {
-  res.send("購物車ＤＢ已經成功連線！！！");
+  res.render("index.html");
 });
 
 //Find All Data
