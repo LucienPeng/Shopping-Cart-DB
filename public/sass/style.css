@@ -132,6 +132,11 @@ section .container.best-seller .row .orders {
   color: #4e6853;
 }
 
+section .container-fluid.sub-banner {
+  height: 30vh;
+  background-color: red;
+}
+
 footer {
   background-color: #d2ffef;
   margin-top: 5rem;
