@@ -133,8 +133,11 @@ section .container.best-seller .row .orders {
 }
 
 section .container-fluid.sub-banner {
-  height: 30vh;
-  background-color: red;
+  height: 50vh;
+  background-image: url(/public/asset/bg1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 footer {
