@@ -20,7 +20,7 @@ body {
 
 header {
   min-height: 100vh;
-  background-image: url(/public/assets/images/bg2.jpg);
+  background-image: url(./assets/bg2.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -140,7 +140,7 @@ section {
   }
   .container-fluid.sub-banner {
     height: 50vh;
-    background-image: url(/public/assets/images/bg1.jpg);
+    background-image: url(./assets/bg1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
