@@ -1,0 +1,156 @@
+$primary-color: #d2ffef;
+$primary-font: Lobster Two, cursive;
+
+//
+$secondary-color: #4e6853;
+$secondary-font: Noto Sans TC, sans-serif;
+$chinese-font: Noto Serif TC, serif;
+
+body {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  h1 {
+    font-family: $primary-font;
+    color: $primary-color;
+  }
+}
+
+header {
+  min-height: 100vh;
+  background-image: url(/public/asset/bg2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  .nav-link {
+    color: aqua;
+  }
+
+  .banner {
+    margin-top: 5rem;
+    .row {
+      height: 50vh;
+      background-color: rgba(210, 255, 239, 0.6);
+      text-align: center;
+
+      .col-6 {
+        h2 {
+          font-family: $secondary-font;
+          font-size: 7rem;
+        }
+        h2::first-letter {
+          font-size: 9rem;
+        }
+      }
+
+      ul {
+        display: flex;
+        justify-content: space-around;
+        color: #fff;
+        list-style-type: none;
+        li:hover {
+          cursor: pointer;
+          color: $primary-color;
+        }
+      }
+
+      button {
+        width: 8rem;
+        border-radius: 0.5rem;
+        border: none;
+        background-color: $primary-color;
+        box-shadow: 1px 1px 1px #fff;
+      }
+      button:hover {
+        background-color: $secondary-color;
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 576px) {
+  header {
+    .banner {
+      .row {
+        height: 65vh;
+
+        ul {
+          padding: 0;
+        }
+
+        .col-6 {
+          h2 {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+          }
+          h2::first-letter {
+            font-size: 6rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+section {
+  .container.best-seller {
+    text-align: center;
+
+    h2 {
+      font-family: $secondary-font;
+      color: $secondary-color;
+      padding: 10px;
+      font-size: 2rem;
+      margin-bottom: 3rem;
+    }
+    .row {
+      .col {
+        img {
+          width: 50%;
+        }
+      }
+      .col:hover {
+        opacity: 0.7;
+        transition: all 0.5s ease;
+        cursor: pointer;
+      }
+      .card {
+        border: none;
+        margin: 0 auto;
+
+        .btn {
+          background-color: $secondary-color;
+          color: #fff;
+        }
+        .btn:hover {
+          background-color: $primary-color;
+        }
+      }
+      .card:hover {
+        opacity: 0.7;
+      }
+      .orders {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: $primary-color;
+  margin-top: 5rem;
+  font-size: 3rem;
+  text-align: center;
+  color: #fff;
+  ul {
+    height: 30vh;
+    list-style-type: none;
+    li {
+      margin: 1rem;
+    }
+  }
+}

@@ -1,0 +1,151 @@
+body {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body h1 {
+  font-family: Lobster Two, cursive;
+  color: #d2ffef;
+}
+
+header {
+  min-height: 100vh;
+  background-image: url(/public/asset/bg2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+header .nav-link {
+  color: aqua;
+}
+
+header .banner {
+  margin-top: 5rem;
+}
+
+header .banner .row {
+  height: 50vh;
+  background-color: rgba(210, 255, 239, 0.6);
+  text-align: center;
+}
+
+header .banner .row .col-6 h2 {
+  font-family: Noto Sans TC, sans-serif;
+  font-size: 7rem;
+}
+
+header .banner .row .col-6 h2::first-letter {
+  font-size: 9rem;
+}
+
+header .banner .row ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: #fff;
+  list-style-type: none;
+}
+
+header .banner .row ul li:hover {
+  cursor: pointer;
+  color: #d2ffef;
+}
+
+header .banner .row button {
+  width: 8rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #d2ffef;
+  -webkit-box-shadow: 1px 1px 1px #fff;
+          box-shadow: 1px 1px 1px #fff;
+}
+
+header .banner .row button:hover {
+  background-color: #4e6853;
+  color: #fff;
+}
+
+@media screen and (min-width: 320px) and (max-width: 576px) {
+  header .banner .row {
+    height: 65vh;
+  }
+  header .banner .row ul {
+    padding: 0;
+  }
+  header .banner .row .col-6 h2 {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+  }
+  header .banner .row .col-6 h2::first-letter {
+    font-size: 6rem;
+  }
+}
+
+section .container.best-seller {
+  text-align: center;
+}
+
+section .container.best-seller h2 {
+  font-family: Noto Sans TC, sans-serif;
+  color: #4e6853;
+  padding: 10px;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+section .container.best-seller .row .col img {
+  width: 50%;
+}
+
+section .container.best-seller .row .col:hover {
+  opacity: 0.7;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+section .container.best-seller .row .card {
+  border: none;
+  margin: 0 auto;
+}
+
+section .container.best-seller .row .card .btn {
+  background-color: #4e6853;
+  color: #fff;
+}
+
+section .container.best-seller .row .card .btn:hover {
+  background-color: #d2ffef;
+}
+
+section .container.best-seller .row .card:hover {
+  opacity: 0.7;
+}
+
+section .container.best-seller .row .orders {
+  color: #4e6853;
+}
+
+footer {
+  background-color: #d2ffef;
+  margin-top: 5rem;
+  font-size: 3rem;
+  text-align: center;
+  color: #fff;
+}
+
+footer ul {
+  height: 30vh;
+  list-style-type: none;
+}
+
+footer ul li {
+  margin: 1rem;
+}
+/*# sourceMappingURL=style.css.map */
