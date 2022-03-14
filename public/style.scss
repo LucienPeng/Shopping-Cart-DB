@@ -97,16 +97,16 @@ header {
 }
 
 section {
+  h2 {
+    font-family: $secondary-font;
+    color: $secondary-color;
+    padding: 10px;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
   .container.best-seller {
     text-align: center;
-
-    h2 {
-      font-family: $secondary-font;
-      color: $secondary-color;
-      padding: 10px;
-      font-size: 2rem;
-      margin-bottom: 3rem;
-    }
     .row {
       .col {
         img {
@@ -148,17 +148,88 @@ section {
     font-size: 3rem;
   }
   .container.category {
+    height: 80vh;
     .row1 {
-      .col {
-        img {
-          width: 100%;
-          height: 100%;
+      height: 50vh;
+      .col:hover {
+        opacity: 1 !important;
+        cursor: pointer;
+      }
+      .col.love {
+        opacity: 0.8;
+        background-position: center;
+        transition-property: opacity;
+        font-size: 3rem;
+        position: relative;
+        justify-content: center;
+        display: flex;
+        a {
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+      .col.love::after {
+        content: "";
+        position: absoulte;
+        background: url("./assets/6.jpeg");
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
+      }
+      .row2 {
+        .col {
+          opacity: 0.8;
+          background-position: center;
+          transition-property: opacity;
+          font-size: 3rem;
+          position: relative;
+          justify-content: center;
+          display: flex;
+          a {
+            text-decoration: none;
+            color: #fff;
+          }
         }
 
-        img:hover {
-          opacity: 0.7;
-          transition: all 0.3s ease-out;
-          cursor: pointer;
+        .col::after {
+          content: "";
+          position: absoulte;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          position: absolute;
+          z-index: -1;
+        }
+        .col:nth-child(1)::after {
+          background: url("./assets/1.jpeg");
+          background-size: cover;
+          background-position: bottom;
+        }
+
+        .col:nth-child(2)::after {
+          background: url("./assets/2.jpeg");
+          background-size: cover;
+          background-position: center;
+        }
+        .col:nth-child(3)::after {
+          background: url("./assets/3.jpeg");
+          background-size: cover;
+          background-position: bottom;
+        }
+        .col:nth-child(4)::after {
+          background: url("./assets/4.jpeg");
+          background-size: cover;
+          background-position: top;
         }
       }
     }
@@ -166,8 +237,17 @@ section {
 }
 
 footer {
+  .container-fluid.promo {
+    .row {
+      height: 20vh;
+      background-color: #f3f4f3;
+      color: #000;
+      font-size: 1.2rem;
+      text-align: left;
+    }
+  }
   min-height: 35vh;
-  background-image: url(./assets/pexels-photo-4842544-2.jpeg);
+  background-image: url(./assets/footer.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   margin-top: 5rem;
