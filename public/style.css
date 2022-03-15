@@ -19,10 +19,6 @@ header {
   background-attachment: fixed;
 }
 
-header .nav-link {
-  color: aqua;
-}
-
 header .banner {
   margin-top: 5rem;
 }
@@ -101,13 +97,16 @@ section .container.best-seller {
 }
 
 section .container.best-seller .row .col img {
-  width: 50%;
+  width: 100%;
 }
 
-section .container.best-seller .row .col:hover {
+section .container.best-seller .row .col img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  overflow: hidden;
   opacity: 0.7;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   cursor: pointer;
 }
 

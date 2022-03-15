@@ -1,0 +1,18 @@
+$primary-color: #d2ffef;
+$primary-font: Lobster Two, cursive;
+
+$secondary-color: #4e6853;
+$secondary-font: Noto Sans TC, sans-serif;
+$chinese-font: Noto Serif TC, serif;
+
+body {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  h1 {
+    font-family: $primary-font;
+    color: $primary-color;
+  }
+}

@@ -1,0 +1,66 @@
+@charset "UTF-8";
+body {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body h1 {
+  font-family: Lobster Two, cursive;
+  color: #d2ffef;
+}
+
+header nav {
+  height: 15vh;
+  background-color: #4e6853;
+}
+
+header .row.promo {
+  height: 5vh;
+  background-color: #d3caa0;
+  color: #fff;
+  text-align: center;
+}
+
+header .row.promo .col::before {
+  content: "➤ ";
+}
+
+section .container h2 {
+  font-family: Noto Sans TC, sans-serif;
+  color: #4e6853;
+  padding: 10px;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+footer {
+  min-height: 35vh;
+  background-image: url(./assets/footer.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 5rem;
+  font-size: 3rem;
+  text-align: center;
+  color: #fff;
+}
+
+footer .container-fluid.promo .row {
+  height: 20vh;
+  background-color: #f3f4f3;
+  color: #000;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+footer ul {
+  height: 30vh;
+  list-style-type: none;
+}
+
+footer ul li {
+  margin: 1rem;
+}
+/*# sourceMappingURL=cart.css.map */
