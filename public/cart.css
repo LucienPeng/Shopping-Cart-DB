@@ -36,6 +36,61 @@ section .container h2 {
   margin-bottom: 3rem;
 }
 
+section .breakdown table {
+  border: #d3caa0 1px solid;
+  border-radius: 0.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+section .breakdown table th,
+section .breakdown table td {
+  border-bottom: #d3caa0 1px solid;
+}
+
+section .breakdown table th.qty::after,
+section .breakdown table td.qty::after {
+  content: " PC";
+}
+
+section .breakdown table th.price::after,
+section .breakdown table td.price::after {
+  content: " TWD";
+}
+
+section .breakdown table tr.items td {
+  height: 30vh;
+  width: 30vw;
+  overflow: hidden;
+}
+
+section .breakdown table tr.items td img {
+  height: 100%;
+  width: 100%;
+}
+
+section .breakdown table tr.items td img:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+}
+
+section .breakdown table th {
+  font-size: 1.2rem;
+  padding: 1.5rem;
+}
+
+section .breakdown button {
+  background-color: #4e6853;
+  border-radius: 0.5rem;
+  border: none;
+  color: #fff;
+  display: inline;
+  width: auto;
+  margin: 0.5rem;
+}
+
 footer {
   min-height: 35vh;
   background-image: url(./assets/footer.jpeg);

@@ -42,7 +42,7 @@
                             </div>
                           </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-cart-plus"></i></a>
+                        <a class="nav-link" href="cart.html"><i class="fas fa-cart-plus"></i></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fa-solid fa-heart"></i></a>
@@ -63,27 +63,48 @@
                 <h2>您的購物車</h2>
             </div>
 
-            <div class="container breakdown" >
+            <div class="container breakdown d-flex justify-content-center flex-column" >
                 <table>
                     <tr>
-                        <th>Item</th>
-                        <th></th>
-                        <th>Quantity</th>
-                        <th>Price</th>
+                      <th>Item</th>
+                      <th></th>
+                      <th>Quantity</th>
+                      <th>Unit Price</th>
+                      <th>Sub total</th>
                     </tr>
+                    <tr class="items">
+                      <td>盆栽一</td>
+                      <td><img src="./assets/2.jpeg" alt=""></td>
+                      <td class="qty">2</td>
+                      <td class="price">30</td>
+                      <td class="price">60</td>
+                    </tr>
+                    <tr class="items">
+                        <td>盆栽二</td>
+                        <td><img src="./assets/3.jpeg" alt=""></td>
+                        <td class="qty">2</td>
+                        <td class="price">30</td>
+                        <td class="price">60</td>
+                      </tr>
                     <tr>
-                        <td>盆栽一</td>
-                        <td>img</td>
-                        <td>3</td>
-                        <td>500</td>
+                      <th>Total</th>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="price">120</td>
                     </tr>
-                    <tr>
-                        <td>Total</td>
-                    </tr>
-              
                 </table>
-            </div>
 
+                <div class="row d-flex justify-content-center align-items-center">
+                    <button class="mt-5">Continue to shop</button>
+                    <button class="mt-5">Add to cart</button>
+                </div>
+    
+                
+            </div>
+            
+
+           
 
         </section>
 

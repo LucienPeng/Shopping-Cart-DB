@@ -28,6 +28,53 @@ section {
       margin-bottom: 3rem;
     }
   }
+  .breakdown {
+    table {
+      border: #d3caa0 1px solid;
+      border-radius: 0.5rem;
+      text-align: center;
+      width: 100%;
+      th,
+      td {
+        border-bottom: #d3caa0 1px solid;
+        &.qty::after {
+          content: " PC";
+        }
+        &.price::after {
+          content: " TWD";
+        }
+      }
+
+      tr.items {
+        td {
+          height: 30vh;
+          width: 30vw;
+          overflow: hidden;
+          img {
+            height: 100%;
+            width: 100%;
+            &:hover {
+              transform: scale(1.2);
+              transition: all 0.7s;
+            }
+          }
+        }
+      }
+      th {
+        font-size: 1.2rem;
+        padding: 1.5rem;
+      }
+    }
+    button {
+      background-color: $secondary-color;
+      border-radius: 0.5rem;
+      border: none;
+      color: #fff;
+      display: inline;
+      width: auto;
+      margin: 0.5rem;
+    }
+  }
 }
 
 footer {
