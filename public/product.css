@@ -77,65 +77,49 @@ footer ul li {
   margin: 1rem;
 }
 
-section .container h2 {
-  font-family: Noto Sans TC, sans-serif;
-  color: #4e6853;
-  padding: 10px;
-  font-size: 2rem;
-  margin-bottom: 3rem;
-}
-
-section .breakdown table {
-  border: #d3caa0 1px solid;
-  border-radius: 0.5rem;
-  text-align: center;
-  width: 100%;
-}
-
-section .breakdown table th,
-section .breakdown table td {
-  border-bottom: #d3caa0 1px solid;
-}
-
-section .breakdown table th.qty::after,
-section .breakdown table td.qty::after {
-  content: " PC";
-}
-
-section .breakdown table th.price::after,
-section .breakdown table td.price::after {
-  content: " TWD";
-}
-
-section .breakdown table tr.items td {
-  width: 30vw;
+.container.product .row .col-4:nth-child(1) {
+  width: 25vw;
   overflow: hidden;
+  margin-right: 2rem;
 }
 
-section .breakdown table tr.items td img {
-  height: 100%;
+.container.product .row .col-4:nth-child(1) img {
   width: 100%;
 }
 
-section .breakdown table tr.items td img:hover {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-  -webkit-transition: all 0.7s;
-  transition: all 0.7s;
+.container.product .row .col-4 ul li {
+  margin-top: 0.5rem;
+  padding-left: 0;
+  line-height: 1.5rem;
 }
 
-section .breakdown table th {
-  font-size: 1.2rem;
-  padding: 1.5rem;
+.container.product .row .col-4.check-out {
+  text-align: left;
 }
 
-section .breakdown button {
-  background-color: #4e6853;
-  border-radius: 0.5rem;
-  border: none;
-  color: #fff;
-  display: inline;
-  width: auto;
+.container.product .row .col-4.check-out input {
+  width: 30%;
+}
+
+.container.product .row .col-4.check-out button {
   margin: 0.5rem;
+  display: block;
+  width: 80%;
+  border: none;
+  background-color: #4e6853;
+  color: #fff;
 }
-/*# sourceMappingURL=cart.css.map */
+
+.container.product .row .col-4.check-out button:hover {
+  opacity: 0.9;
+}
+
+.container.product .row .col-4.check-out ul li {
+  list-style-type: none;
+  line-height: 2rem;
+}
+
+.container.product .row .col-4.check-out ul li hr {
+  margin: 1.5rem 0rem 1.5rem 0rem;
+}
+/*# sourceMappingURL=product.css.map */

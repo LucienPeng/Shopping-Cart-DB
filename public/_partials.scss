@@ -1,0 +1,24 @@
+@import "./theme";
+
+header {
+  nav {
+    height: 15vh;
+    background-color: $secondary-color;
+  }
+  .row.promo {
+    height: 5vh;
+    background-color: #d3caa0;
+    color: #fff;
+    text-align: center;
+    .col {
+      height: 100%;
+      &::before {
+        content: "➤ ";
+      }
+      &:hover {
+        background-color: #a1986dc4;
+      }
+    }
+  }
+}
+

@@ -1,22 +1,7 @@
 @import "./theme";
+@import "./partials";
+@import "./footer";
 
-header {
-  nav {
-    height: 15vh;
-    background-color: $secondary-color;
-  }
-  .row.promo {
-    height: 5vh;
-    background-color: #d3caa0;
-    color: #fff;
-    text-align: center;
-    .col {
-      &::before {
-        content: "➤ ";
-      }
-    }
-  }
-}
 
 section {
   .container {
@@ -47,14 +32,13 @@ section {
 
       tr.items {
         td {
-          height: 30vh;
           width: 30vw;
           overflow: hidden;
           img {
             height: 100%;
             width: 100%;
             &:hover {
-              transform: scale(1.2);
+              transform: scale(1.5);
               transition: all 0.7s;
             }
           }
@@ -77,29 +61,4 @@ section {
   }
 }
 
-footer {
-  .container-fluid.promo {
-    .row {
-      height: 20vh;
-      background-color: #f3f4f3;
-      color: #000;
-      font-size: 1.2rem;
-      text-align: left;
-    }
-  }
-  min-height: 35vh;
-  background-image: url(./assets/footer.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-top: 5rem;
-  font-size: 3rem;
-  text-align: center;
-  color: #fff;
-  ul {
-    height: 30vh;
-    list-style-type: none;
-    li {
-      margin: 1rem;
-    }
-  }
-}
+

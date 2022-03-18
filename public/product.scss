@@ -1,0 +1,49 @@
+@import "./theme";
+@import "./partials";
+@import "./footer";
+
+.container.product {
+  .row {
+    .col-4 {
+      &:nth-child(1) {
+        width: 25vw;
+        overflow: hidden;
+        margin-right: 2rem;
+        img {
+          width: 100%;
+        }
+      }
+
+      ul li {
+        margin-top: 0.5rem;
+        padding-left: 0;
+        line-height: 1.5rem;
+      }
+
+      &.check-out {
+        text-align: left;
+        input {
+          width: 30%;
+        }
+        button {
+          margin: 0.5rem;
+          display: block;
+          width: 80%;
+          border: none;
+          background-color: $secondary-color;
+          color: #fff;
+          &:hover {
+            opacity: 0.9;
+          }
+        }
+        ul li {
+          list-style-type: none;
+          line-height: 2rem;
+          hr {
+            margin: 1.5rem 0rem 1.5rem 0rem;
+          }
+        }
+      }
+    }
+  }
+}

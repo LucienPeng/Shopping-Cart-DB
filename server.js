@@ -52,6 +52,10 @@ app.get("/cart", (req, res) => {
   res.render("cart.html");
 });
 
+app.get("/product", (req, res) => {
+  res.render("product.html");
+});
+
 //Find All Data
 app.get("/items", async (req, res) => {
   try {
