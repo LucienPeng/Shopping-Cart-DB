@@ -51,7 +51,7 @@ header .row.promo .col:hover {
 
 footer {
   min-height: 35vh;
-  background-image: url(./assets/footer.jpeg);
+  background-image: url(../assets/footer.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   margin-top: 5rem;

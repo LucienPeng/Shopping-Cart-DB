@@ -1,0 +1,125 @@
+@charset "UTF-8";
+body {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body h1 {
+  font-family: Lobster Two, cursive;
+  color: #d2ffef;
+}
+
+body {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body h1 {
+  font-family: Lobster Two, cursive;
+  color: #d2ffef;
+}
+
+header nav {
+  height: 15vh;
+  background-color: #4e6853;
+}
+
+header .row.promo {
+  height: 5vh;
+  background-color: #d3caa0;
+  color: #fff;
+  text-align: center;
+}
+
+header .row.promo .col {
+  height: 100%;
+}
+
+header .row.promo .col::before {
+  content: "➤ ";
+}
+
+header .row.promo .col:hover {
+  background-color: #a1986dc4;
+}
+
+footer {
+  min-height: 35vh;
+  background-image: url(../assets/footer.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 5rem;
+  font-size: 3rem;
+  text-align: center;
+  color: #fff;
+}
+
+footer .container-fluid.promo .row {
+  height: 20vh;
+  background-color: #f3f4f3;
+  color: #000;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+footer ul {
+  height: 30vh;
+  list-style-type: none;
+}
+
+footer ul li {
+  margin: 1rem;
+}
+
+.container.product .row .col-4:nth-child(1) {
+  width: 25vw;
+  overflow: hidden;
+  margin-right: 2rem;
+}
+
+.container.product .row .col-4:nth-child(1) img {
+  width: 100%;
+}
+
+.container.product .row .col-4 ul li {
+  margin-top: 0.5rem;
+  padding-left: 0;
+  line-height: 1.5rem;
+}
+
+.container.product .row .col-4.check-out {
+  text-align: left;
+}
+
+.container.product .row .col-4.check-out input {
+  width: 30%;
+}
+
+.container.product .row .col-4.check-out button {
+  margin: 0.5rem;
+  display: block;
+  width: 80%;
+  border: none;
+  background-color: #4e6853;
+  color: #fff;
+}
+
+.container.product .row .col-4.check-out button:hover {
+  opacity: 0.9;
+}
+
+.container.product .row .col-4.check-out ul li {
+  list-style-type: none;
+  line-height: 2rem;
+}
+
+.container.product .row .col-4.check-out ul li hr {
+  margin: 1.5rem 0rem 1.5rem 0rem;
+}
+/*# sourceMappingURL=product.css.map */

@@ -3,7 +3,7 @@
 
 header {
   min-height: 100vh;
-  background-image: url(./assets/bg2.jpg);
+  background-image: url(../assets/bg2.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -122,7 +122,7 @@ section {
   }
   .container-fluid.sub-banner {
     height: 50vh;
-    background-image: url(./assets/bg1.jpg);
+    background-image: url(../assets/bg1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -153,7 +153,7 @@ section {
       .col.love::after {
         content: "";
         position: absoulte;
-        background: url("./assets/6.jpeg");
+        background: url("../assets/6.jpeg");
         background-size: cover;
         background-position: center;
         width: 100%;
@@ -193,23 +193,23 @@ section {
           z-index: -1;
         }
         .col:nth-child(1)::after {
-          background: url("./assets/1.jpeg");
+          background: url("../assets/1.jpeg");
           background-size: cover;
           background-position: bottom;
         }
 
         .col:nth-child(2)::after {
-          background: url("./assets/2.jpeg");
+          background: url("../assets/2.jpeg");
           background-size: cover;
           background-position: center;
         }
         .col:nth-child(3)::after {
-          background: url("./assets/3.jpeg");
+          background: url("../assets/3.jpeg");
           background-size: cover;
           background-position: bottom;
         }
         .col:nth-child(4)::after {
-          background: url("./assets/4.jpeg");
+          background: url("../assets/4.jpeg");
           background-size: cover;
           background-position: top;
         }

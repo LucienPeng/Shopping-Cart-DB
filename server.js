@@ -2,12 +2,15 @@ const Item = require("./modules/collection.js");
 
 const express = require("express");
 const app = express();
+const ejs = require("ejs");
 
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static("public"));
+app.engine("html", require("ejs").__express);
+app.set("view engine", "html");
+app.use(express.static(__dirname + "/views"));
 
 const username = encodeURIComponent("lucien");
 const password = encodeURIComponent("/nxfl7zp");
