@@ -14,7 +14,7 @@ app.engine("html", require("ejs").__express);
 app.set("view engine", "html");
 app.use(express.static(__dirname + "/views"));
 
-const uri = process.env.URI;
+const uri = process.env.MONGODB_URI;
 
 mongoose
   .connect(uri, {
