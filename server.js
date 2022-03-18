@@ -9,8 +9,8 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.engine("html", require("ejs").__express);
-app.set("view engine", "html");
-app.use(express.static(__dirname + "/views"));
+// app.set("view engine", "html");
+// app.use(express.static(__dirname + "/views"));
 
 const username = encodeURIComponent("lucien");
 const password = encodeURIComponent("/nxfl7zp");
@@ -51,13 +51,13 @@ app.get("/", (req, res) => {
   res.render("index.html");
 });
 
-app.get("/cart", (req, res) => {
-  res.render("cart.html");
-});
+// app.get("/cart", (req, res) => {
+//   res.render("cart.html");
+// });
 
-app.get("/product", (req, res) => {
-  res.render("product.html");
-});
+// app.get("/product", (req, res) => {
+//   res.render("product.html");
+// });
 
 //Find All Data
 app.get("/items", async (req, res) => {
