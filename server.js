@@ -1,21 +1,20 @@
-const Item = require("./modules/collection.js");
-
 const express = require("express");
 const app = express();
 const ejs = require("ejs");
 
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+const Item = require("./modules/collection.js");
+
+const dotenv = require("dotenv");
+require("dotenv").config();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.engine("html", require("ejs").__express);
 app.set("view engine", "html");
 app.use(express.static(__dirname + "/views"));
 
-const username = encodeURIComponent("lucien");
-const password = encodeURIComponent("/nxfl7zp");
-const collection = encodeURIComponent("items");
-const uri = `mongodb+srv://${username}:${password}@repository.mg5t5.mongodb.net/${collection}?retryWrites=true&w=majority`;
+const uri = process.env.URI;
 
 mongoose
   .connect(uri, {
@@ -69,72 +68,18 @@ app.get("/items", async (req, res) => {
   }
 });
 
-// //Find Topic
-// app.get("/topic/:topic", async (req, res) => {
-//   let { topic } = req.params;
-//   try {
-//     let data = await Message.find(
-//       { topic },
-//       {
-//         id: 1,
-//         user: 1,
-//         timeStamp: 1,
-//         topic: 1,
-//         content: 1,
-//         like: 1,
-//         valid: 1,
-//         _id: 0,
-//       }
-//     );
-//     res.send(data);
-//   } catch (e) {
-//     console.log(e);
-//   }
-// });
-
-// //Find User
-// app.get("/user/:user", async (req, res) => {
-//   let { user } = req.params;
-//   try {
-//     let data = await Message.find(
-//       { user },
-//       {
-//         id: 1,
-//         user: 1,
-//         timeStamp: 1,
-//         topic: 1,
-//         content: 1,
-//         like: 1,
-//         valid: 1,
-//         _id: 0,
-//       }
-//     );
-//     res.send(data);
-//   } catch (e) {
-//     console.log(e);
-//   }
-// });
-
-// //Delete Topic
-// app.post("/deleteTopic/:topic", async (req, res) => {
-//   let { topic } = req.params;
-//   try {
-//     Message.deleteMany({ topic: topic }, function (err) {
-//       if (err) return handleError(err);
-//       res.send("Data has been removed !");
-//     });
-//   } catch (e) {
-//     console.log(e);
-//   }
-// });
-
 app.post("/addItem", async (req, res) => {
-  let { item, price, stock, description } = req.body;
+  let { sku, category, item, price, stock, photo, description, recommanded } =
+    req.body;
   let newItem = new Item({
+    sku,
+    category,
     item,
     price,
     stock,
+    photo,
     description,
+    recommanded,
   });
   await newItem
     .save()
@@ -148,31 +93,6 @@ app.post("/addItem", async (req, res) => {
       res.send(e);
     });
 });
-
-// app.post("/like/:id", async (req, res) => {
-//   let { id } = req.params;
-
-//   const filter = { id: id };
-//   let oldLike = 0;
-
-//   await Message.findOne(filter).then((meg) => {
-//     //res.send("Message has been found");
-//     oldLike = meg.like + 1;
-//   });
-//   let update = { like: oldLike };
-
-//   await Message.findOneAndUpdate(filter, update, {
-//     new: true,
-//   })
-//     .then((meg) => {
-//       console.log("Like has been updated(+1)");
-
-//       res.status(200).send(meg);
-//     })
-//     .catch((meg) => {
-//       console.log(meg);
-//     });
-// });
 
 app.listen(process.env.PORT || 3000, () =>
   console.log("Server is running...Go! Go! GO!")

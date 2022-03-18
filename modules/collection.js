@@ -2,6 +2,12 @@ const mongoose = require("mongoose");
 //var AutoIncrement = require("mongoose-sequence")(mongoose);
 
 const itemSchema = new mongoose.Schema({
+  sku: {
+    type: Number,
+  },
+  category: {
+    type: String,
+  },
   item: {
     type: String,
   },
@@ -10,12 +16,16 @@ const itemSchema = new mongoose.Schema({
   },
   stock: {
     type: Number,
-    required: true,
+  },
+  photo: {
+    type: String,
   },
   description: {
     type: String,
-    required: true,
-    max: 300,
+  },
+  recommanded: {
+    type: Boolean,
+    default: false,
   },
 });
 
