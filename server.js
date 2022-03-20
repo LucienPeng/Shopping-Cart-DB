@@ -68,6 +68,29 @@ app.get("/items", async (req, res) => {
   }
 });
 
+//Deduct
+app.post("/deduct", async (req, res) => {
+  let { item, deduct } = req.body;
+  try {
+    let product = await Item.findOne({ item });
+    product.stock -= deduct;
+    await product.save();
+    await res.status(200).send(product);
+  } catch (e) {
+    console.log(e);
+  }
+});
+
+//Sort
+app.get("/recommanded", async (req, res) => {
+  try {
+    let sortRecommanded = await Item.find({ recommanded: true });
+    await res.send(sortRecommanded);
+  } catch (e) {
+    console.log(e);
+  }
+});
+
 app.post("/addItem", async (req, res) => {
   let { sku, category, item, price, stock, photo, description, recommanded } =
     req.body;
