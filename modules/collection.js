@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 const itemSchema = new mongoose.Schema({
   sku: {
-    type: Number,
+    type: String,
   },
   category: {
     type: String,
@@ -21,6 +21,9 @@ const itemSchema = new mongoose.Schema({
     type: String,
   },
   description: {
+    type: String,
+  },
+  care: {
     type: String,
   },
   promo: {
