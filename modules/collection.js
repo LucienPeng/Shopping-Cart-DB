@@ -23,9 +23,8 @@ const itemSchema = new mongoose.Schema({
   description: {
     type: String,
   },
-  recommanded: {
-    type: Boolean,
-    default: false,
+  promo: {
+    type: String,
   },
 });
 
