@@ -92,7 +92,7 @@ app.get("/recommanded", async (req, res) => {
 });
 
 app.post("/addItem", async (req, res) => {
-  let { sku, category, item, price, stock, photo, description, recommanded } =
+  let { sku, category, item, price, stock, photo, description, care, promo } =
     req.body;
   let newItem = new Item({
     sku,
@@ -102,7 +102,8 @@ app.post("/addItem", async (req, res) => {
     stock,
     photo,
     description,
-    recommanded,
+    care,
+    promo,
   });
   await newItem
     .save()
