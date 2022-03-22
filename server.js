@@ -68,6 +68,28 @@ app.get("/items", async (req, res) => {
   }
 });
 
+//Find category
+app.get("/:category", async (req, res) => {
+  let { category } = req.params;
+  let data = await Item.find({ category });
+  try {
+    await res.send(data);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+//Find item
+app.get("/item/:sku", async (req, res) => {
+  let { sku } = req.params;
+  let data = await Item.find({ sku });
+  try {
+    await res.send(data);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 //Deduct
 app.post("/deduct", async (req, res) => {
   let { item, deduct } = req.body;
@@ -118,6 +140,6 @@ app.post("/addItem", async (req, res) => {
     });
 });
 
-app.listen(process.env.PORT || 3000, () =>
+app.listen(process.env.PORT || 8080, () =>
   console.log("Server is running...Go! Go! GO!")
 );
