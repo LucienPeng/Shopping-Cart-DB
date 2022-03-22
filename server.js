@@ -140,6 +140,6 @@ app.post("/addItem", async (req, res) => {
     });
 });
 
-app.listen(process.env.PORT || 8080, () =>
+app.listen(process.env.PORT || 3000, () =>
   console.log("Server is running...Go! Go! GO!")
 );
