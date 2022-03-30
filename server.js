@@ -61,7 +61,7 @@ app.get("/product", (req, res) => {
 //Find All Data
 app.get("/items", async (req, res) => {
   try {
-    let data = await Item.find({});
+    let data = await Item.find({}, { __v: 0, _id: 0 });
     await res.send(data);
   } catch (e) {
     console.log(e);
@@ -71,7 +71,7 @@ app.get("/items", async (req, res) => {
 //Find category
 app.get("/:category", async (req, res) => {
   let { category } = req.params;
-  let data = await Item.find({ category });
+  let data = await Item.find({ category }, { __v: 0, _id: 0 });
   try {
     await res.send(data);
   } catch (err) {
@@ -82,7 +82,7 @@ app.get("/:category", async (req, res) => {
 //Find item
 app.get("/item/:sku", async (req, res) => {
   let { sku } = req.params;
-  let data = await Item.find({ sku });
+  let data = await Item.find({ sku }, { __v: 0, _id: 0 });
   try {
     await res.send(data);
   } catch (err) {
@@ -94,7 +94,7 @@ app.get("/item/:sku", async (req, res) => {
 app.post("/deduct", async (req, res) => {
   let { item, deduct } = req.body;
   try {
-    let product = await Item.findOne({ item });
+    let product = await Item.findOne({ item }, { __v: 0, _id: 0 });
     product.stock -= deduct;
     await product.save();
     await res.status(200).send(product);
@@ -106,7 +106,10 @@ app.post("/deduct", async (req, res) => {
 //Sort
 app.get("/recommanded", async (req, res) => {
   try {
-    let sortRecommanded = await Item.find({ recommanded: true });
+    let sortRecommanded = await Item.find(
+      { recommanded: true },
+      { __v: 0, _id: 0 }
+    );
     await res.send(sortRecommanded);
   } catch (e) {
     console.log(e);
