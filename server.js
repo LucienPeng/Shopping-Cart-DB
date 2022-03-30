@@ -4,6 +4,7 @@ const ejs = require("ejs");
 
 const mongoose = require("mongoose");
 const Item = require("./modules/collection.js");
+const Order = require("./modules/order");
 
 const dotenv = require("dotenv");
 require("dotenv").config();
@@ -141,6 +142,68 @@ app.post("/addItem", async (req, res) => {
       console.log(e);
       res.send(e);
     });
+});
+
+//Add Orders
+
+app.post("/order/add", async (req, res) => {
+  let { consignee, email, cellPhone, address, payment, note, items } = req.body;
+  let newOrder = new Order({
+    consignee: "地瓜",
+    email: " digua@fake.com",
+    cellPhone: "0912345678",
+    address: "台北市大安區瑞安街3號",
+    payment: "貨到付款",
+    note,
+    items: [
+      { sku: "F2E00002", item: "粉紅佳人合果芋盆栽", qty: "2" },
+      { sku: "F2E00001", item: "斑葉常春藤盆栽", qty: "3" },
+      { sku: "F2E00003", item: "奧利多蔓綠絨盆栽", qty: "4" },
+    ],
+  });
+  await newOrder
+    .save()
+    .then(() => {
+      console.log(`New order accepted.`);
+    })
+    .catch((e) => {
+      console.log(`New order not accepted.`);
+      res.send(e);
+    });
+  if (newOrder) {
+    for (let i = 0; i < newOrder.items.length; i++) {
+      let filter = { sku: newOrder.items[i].sku };
+
+      await Item.findOne(filter).then((stock) => {
+        newStock = stock.stock - newOrder.items[i].qty;
+      });
+
+      let update = { stock: newStock };
+      await Item.findOneAndUpdate(filter, update, {
+        new: true,
+      })
+        .then((newStock) => {
+          console.log(newStock);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    }
+    await res.send(
+      `The new order and the stock has been created and well deducted. New order : 
+        ${newOrder}`
+    );
+  } else res.send("Error");
+});
+
+//Find orders
+app.get("/order/all", async (req, res) => {
+  try {
+    let data = await Order.find({}, { __v: 0 });
+    await res.send(data);
+  } catch (e) {
+    console.log(e);
+  }
 });
 
 app.listen(process.env.PORT || 3000, () =>
